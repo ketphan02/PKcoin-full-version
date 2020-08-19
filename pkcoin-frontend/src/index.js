@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import App from './Routes/App/App';
-import Card from './Routes/Cards/Card';
 
 import * as serviceWorker from './serviceWorker';
 
