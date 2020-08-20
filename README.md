@@ -11,7 +11,7 @@ React js
 Python (the implemented code) and flask
 
 ## Deployment
-Neh, I'm lazy to deploy it
+Neh, I'm too lazy to deploy it
 
 ## Reference
 My two repositories:
