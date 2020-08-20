@@ -1,1 +1,0 @@
-web: gunicorn ./flask-backend/main.wsgi --log-file -

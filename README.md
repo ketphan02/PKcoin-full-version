@@ -5,8 +5,13 @@ An implementation of blockchain using python
 ## Work
 ### Frontend
 React js
+![alt text](https://github.com/ketphan02/PKcoin-full-version/pictures/UI.png "React JS UI")
+
 ### Backend
 Python (the implemented code) and flask
+
+## Deployment
+Neh, I'm lazy to deploy it
 
 ## Reference
 My two repositories:
