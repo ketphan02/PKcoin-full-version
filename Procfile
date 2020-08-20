@@ -1,1 +1,1 @@
-web: python ./flask-backend/main.py
+web: gunicorn gettingstarted.wsgi --log-file -
