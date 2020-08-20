@@ -77,6 +77,10 @@ card-body {
     border: 1px solid #F5F5F5;
     border-radius: 10px 10px 0 0;
     margin-bottom: -1px;
+
+    
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 list-items {
@@ -93,6 +97,10 @@ list-items {
     flex: 1 1 auto;
     flex-direction: column;
     padding: 1.25rem;
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 list-items-bruh {
@@ -111,4 +119,8 @@ list-items-bruh {
     padding: 1.25rem;
 
     border-radius: 0 0 10px 10px;
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

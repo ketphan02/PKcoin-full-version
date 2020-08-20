@@ -19,7 +19,10 @@ with open('./PKcoin/keys/public_key.pem') as f:
 
 PKcoin = BlockChain()
 
-PKcoin = flask.json.dumps(PKcoin, default=lambda o: o.__dict__)
+data = PKcoin.pendingTransactions
+del PKcoin.pendingTransactions
+PKcoin_json = flask.json.dumps(PKcoin, default=lambda o: o.__dict__)
+PKcoin.readd(data)
 
 @app.route("/")
 def home():
@@ -27,7 +30,26 @@ def home():
 
 @app.route("/get_blockchain/")
 def get_blockchain():
-    return PKcoin
+    return PKcoin_json
+
+@app.route("/mine_blockchain/")
+def mine_blockchain():
+    PKcoin.minePendingTransactions(public_key)
+
+    big_data = PKcoin.pendingTransactions
+    del PKcoin.pendingTransactions
+    
+    data = []
+    for i in range(len(PKcoin.chain)):
+        data.append(PKcoin.chain[i].transactions)
+        del PKcoin.chain[i].transactions
+    PKcoin_json = flask.json.dumps(PKcoin, default=lambda o: o.__dict__)
+    for i in range(len(PKcoin.chain)):
+        PKcoin.chain[i].readd(data[i])
+    PKcoin.readd(big_data)
+    print(PKcoin.getBalance(public_key))
+    # print(big_data)   
+    return PKcoin_json
 
 if __name__ == "__main__":   
     app.run(debug=True)

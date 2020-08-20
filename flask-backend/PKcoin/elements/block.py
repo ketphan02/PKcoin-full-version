@@ -3,11 +3,14 @@ import hashlib
 class Block:
     def __init__(self, datetime, transactions, prevHash = ''):
         self.key = 0
-        self.datetime = datetime
+        self.datetime = str(datetime)
         self.transactions = transactions
         self.prevHash = prevHash
         self.hash = self.hashFunc()
-        
+    
+    def readd(self, data):
+        self.transactions = data
+
     def hashFunc(self):
         hashData = str(self.datetime) + str(self.transactions) + str(self.prevHash) + str(self.key)
         hashData = hashData.encode()

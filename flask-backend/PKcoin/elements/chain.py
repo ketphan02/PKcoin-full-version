@@ -5,12 +5,15 @@ from datetime import datetime
 class BlockChain:
     def __init__(self):
         self.chain = [self.firstBlock()]
-        self.diff = 2
+        self.diff = 4
         self.pendingTransactions = []
         self.miningReward = 200
 
+    def readd(self, data):
+        self.pendingTransactions = data
+
     def firstBlock(self):
-        return Block("01/01/2020", [Transactions('', '', 0)])
+        return Block(datetime.now(), [Transactions('', '', 0)])
 
     def lastestBlock(self):
         return self.chain[-1]
@@ -26,7 +29,7 @@ class BlockChain:
 
         if not transaction.isValid():
             raise Exception("Cannot add this transacton to chain !")
-
+        
         self.pendingTransactions.append(transaction)
 
     def minePendingTransactions(self, miningRewardAddress):
@@ -36,7 +39,7 @@ class BlockChain:
         block.mineBlock(self.diff)
 
         print("Mined !")
-        self.chain.append(block)
+        self.addBlock(block)
 
         self.pendingTransactions = [ Transactions(None, miningRewardAddress, self.miningReward) ]
 
