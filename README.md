@@ -11,7 +11,9 @@ Python (the implemented code) and flask
 ## Reference
 My two repositories:
 * [Dummy Blockchain](https://github.com/ketphan02/PKcoin)
-* [PKcoin-frontend](https://github.com/ketphan02/pkcoin-frontend)<br>
+* [PKcoin-frontend](https://github.com/ketphan02/pkcoin-frontend)
+
+
 I did lots of work to connect these two repositories, but still, these two are the core of this project.
 
 ## Bibliography
